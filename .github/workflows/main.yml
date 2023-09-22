@@ -19,7 +19,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Copy Files to Azure VM
-        run: scp -o StrictHostKeyChecking=no -v ~/.ssh/id_rsa index.html azureuser@20.116.54.11:/var/www/html/index.html
+        run: scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa index.html azureuser@20.116.54.11:/var/www/html/index.html
         
       - name: Restart Apache Server
         run: ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa azureuser@20.116.54.11 'sudo systemctl restart apache2'
