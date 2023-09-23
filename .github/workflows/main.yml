@@ -13,7 +13,7 @@ jobs:
 
       # checkout the repo
       - name: Checkout
-        uses: actions/checkout@patche-1
+        uses: actions/checkout@patch-1
     
       - name: Set up SSH
         run: |
